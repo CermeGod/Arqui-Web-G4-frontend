@@ -1,0 +1,108 @@
+<div class="container">
+  <div style="text-align: center; margin: 3%">
+    <h2>{{ edicion ? 'Editar Usuario' : 'Registrar Usuario' }}</h2>
+  </div>
+
+  <div style="text-align: center;">
+    <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+
+
+      <br />
+
+      <!-- Nombre Usuario -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nombre Usuario</mat-label>
+        <input matInput formControlName="name" required />
+        @if(form.get('name')?.hasError('required')) {
+          <mat-error>El campo Nombre es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+
+      <br />
+
+      <br />
+
+      <!-- Apellido Usuario -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Apellido Usuario</mat-label>
+        <input matInput formControlName="apellido" required />
+        @if(form.get('apellido')?.hasError('required')) {
+          <mat-error>El campo Apellido es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+      <br />
+        <mat-label>Enabled</mat-label>
+      <mat-radio-group aria-label="Select an option" formControlName="enabled">
+        <mat-radio-button [value]="true">Activo</mat-radio-button>
+        <mat-radio-button [value]="false">No Activo</mat-radio-button>
+        <mat-error>
+          @if (form.get('enabled')?.hasError('required')) { Ingrese su Actividad! }
+        </mat-error>
+      </mat-radio-group>
+
+            <br />
+
+      <!-- telefono Usuario -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Telefono</mat-label>
+        <input matInput formControlName="telefono" required />
+        @if(form.get('telefono')?.hasError('required')) {
+          <mat-error>El campo telefono es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+
+
+      <br />
+
+      <!-- Correo Usuario -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Correo Usuario</mat-label>
+        <input matInput formControlName="correo" required />
+        @if(form.get('correo')?.hasError('required')) {
+          <mat-error>El campo Correo es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+
+      <br />
+
+      <!-- Contraseña Usuario -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="contraseña" required />
+        @if(form.get('contraseña')?.hasError('required')) {
+          <mat-error>El campo Contraseña es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+
+
+      <br />
+
+      <!-- Foto Usuario -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Foto Usuario</mat-label>
+        <input matInput type="text" formControlName="foto" required />
+        @if(form.get('foto')?.hasError('required')) {
+          <mat-error>El campo Foto es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+
+      <br />
+              <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Fecha </mat-label>
+        <input matInput [matDatepicker]="pickerInicio" [min]="fechaActual" formControlName="fecha" required />
+        <mat-datepicker-toggle matSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+        <mat-datepicker #pickerInicio></mat-datepicker>
+        
+        @if(form.get('fecha')?.hasError('required') && form.get('fecha')?.touched) {
+          <mat-error>El campo Fecha Publicacion es obligatorio.</mat-error>
+        }
+        @if(form.get('fecha')?.hasError('matDatepickerMin')) {
+          <mat-error>La fecha no puede ser anterior a hoy.</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <button mat-button>{{ edicion ? 'Actualizar' : 'Registrar' }}</button>
+    </form>
+  </div>
+</div>

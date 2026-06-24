@@ -1,0 +1,49 @@
+<mat-toolbar class="main-navbar">
+  <div class="navbar-brand">
+    <mat-icon class="brand-icon">dashboard</mat-icon>
+    <span>Inmovision</span>
+  </div>
+
+  <div class="menu-links">
+    <button mat-button [matMenuTriggerFor]="menuUsuarios" class="nav-btn">
+      <mat-icon>person</mat-icon> Usuario
+    </button>
+
+    <button mat-button [matMenuTriggerFor]="menuDepartamentos" class="nav-btn">
+      <mat-icon>location_city</mat-icon> Departamento
+    </button>
+
+    <button mat-button [matMenuTriggerFor]="menuProvincias" class="nav-btn">
+      <mat-icon>map</mat-icon> Provincia
+    </button>
+  </div>
+</mat-toolbar>
+
+<div class="navbar-spacer"></div>
+
+<mat-menu #menuUsuarios="matMenu">
+  <button mat-menu-item routerLink="/usuarios">
+    <mat-icon>list</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/usuarios/nuevo">
+    <mat-icon>add</mat-icon> Registrar
+  </button>
+</mat-menu>
+
+<mat-menu #menuDepartamentos="matMenu">
+  <button mat-menu-item routerLink="/departamentos">
+    <mat-icon>list</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/departamentos/nuevo">
+    <mat-icon>add</mat-icon> Registrar
+  </button>
+
+  <mat-menu #menuProvincias="matMenu">
+  <button mat-menu-item routerLink="/provincias">
+    <mat-icon>list</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/provincias/nuevo">
+    <mat-icon>add</mat-icon> Registrar
+  </button>
+  
+</mat-menu>

@@ -1,0 +1,60 @@
+/* 1. Fondo celeste cremoso para la barra superior */
+mat-toolbar.main-navbar {
+  background-color: #e0f2fe !important; /* Celeste pastel/cremoso */
+  color: #1e293b !important; /* Texto oscuro para que contraste bien */
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 24px !important;
+  height: 64px !important;
+  border-bottom: 2px solid #bae6fd; /* Línea decorativa sutil */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Título de la inmobiliaria (Inmovision) */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: #0369a1; /* Azul inmobiliario */
+}
+
+.brand-icon {
+  color: #0284c7 !important;
+}
+
+/* 2. Contenedor de botones (Aquí controlamos la separación) */
+.menu-links {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 20px !important; /* <--- Aumenté la separación entre botones como me pediste */
+}
+
+/* 3. Estilo y color para tus botones (Usuario y Departamento) */
+.menu-links button.nav-btn {
+  background-color: #0284c7 !important; /* Azul llamativo */
+  color: #ffffff !important; /* Letras blancas */
+  border-radius: 8px !important; /* Bordes suaves */
+  padding: 6px 16px !important;
+  font-weight: 600 !important;
+  transition: background-color 0.2s ease;
+}
+
+/* Cambio de color sutil cuando pasas el mouse por encima */
+.menu-links button.nav-btn:hover {
+  background-color: #0369a1 !important;
+}
+
+/* Iconos dentro de los botones del menú */
+.menu-links button.nav-btn mat-icon {
+  color: #ffffff !important;
+  margin-right: 4px;
+}
+
+/* Espaciador para que la tabla no se pegue al menú */
+.navbar-spacer {
+  height: 30px;
+  width: 100%;
+}

@@ -1,0 +1,43 @@
+/* --- Botones dentro de la tabla (CÓDIGO ORIGINAL) --- */
+button[matButton] {
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 4px 12px;
+  color: rgb(238, 244, 241);
+  text-transform: none;
+  transition: all 0.25s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  background-color: rgb(251, 140, 0);
+}
+
+/* --- Responsivo (botones más compactos en pantallas pequeñas) (CÓDIGO ORIGINAL) --- */
+@media (max-width: 768px) {
+  button[matButton] [matIconButton] {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+}
+
+/* --- ESTILO CORREGIDO Y REFORZADO: Reducir y estilizar la columna de Contraseña --- */
+
+/* 1. Aplicar estilo al ENCABEZADO de la columna (TH) para forzar el ancho */
+th.mat-column-Contrasena {
+  /* Forzar un ancho fijo. AJUSTA este valor (ej: 150px) si sigue siendo muy ancho. */
+  width: 150px !important; 
+  min-width: 150px !important;
+  max-width: 150px !important;
+}
+
+/* 2. Aplicar estilo a las CELDAS de datos de la columna (TD) para cortar el texto */
+td.mat-column-Contrasena {
+  /* Estas propiedades fuerzan que el texto se corte con puntos suspensivos */
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+
+  /* Repetimos el ancho forzado para mayor seguridad */
+  width: 150px !important;
+  min-width: 150px !important;
+  max-width: 150px !important;
+}

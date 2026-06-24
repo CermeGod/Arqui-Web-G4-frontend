@@ -1,0 +1,39 @@
+<div class="container">
+  <div style="text-align: center; margin: 3%">
+    <h2>{{ edicion ? 'Editar Usuario' : 'Registrar Usuario' }}</h2>
+  </div>
+
+  <div style="text-align: center;">
+    <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+
+      <br />
+
+      <!-- Nombre Usuario -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nombre de Provincia</mat-label>
+        <input matInput formControlName="nombre" required />
+        @if(form.get('nombre')?.hasError('required')) {
+          <mat-error>El campo Nombre es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+
+      <br />
+            <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Usuario (Autor)</mat-label>
+        <mat-select formControlName="fkDepartamento" required>
+          @for (d of listaDepartamento; track d.departamentoId) {
+          <mat-option [value]="d.departamentoId">{{ d.name }}</mat-option>
+          }
+        </mat-select>
+        @if(form.get('fkUsuario')?.hasError('required')) { 
+        <mat-error>El Usuario es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+      
+      <br />
+
+      <button mat-button>{{ edicion ? 'Actualizar' : 'Registrar' }}</button>
+    </form>
+  </div>
+</div>
+
