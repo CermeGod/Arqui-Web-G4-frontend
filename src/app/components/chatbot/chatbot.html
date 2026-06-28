@@ -1,0 +1,28 @@
+<div class="chat-container">
+  <div class="mensajes">
+    @for (mensaje of historial; track mensaje) {
+      <div [ngClass]="{'mensaje-usuario': mensaje.isUser, 'mensaje-bot': !mensaje.isUser}">
+        <p>{{ mensaje.text }}</p>
+      </div>
+    }
+    
+    @if (cargando) {
+      <div class="mensaje-bot cargando">
+        <p>Gemini está escribiendo...</p>
+      </div>
+    }
+  </div>
+
+  <div class="input-area">
+    <input 
+      type="text" 
+      [(ngModel)]="mensajeUsuario" 
+      (keyup.enter)="enviarMensaje()"
+      placeholder="Escribe tu mensaje..."
+      [disabled]="cargando"
+    />
+    <button (click)="enviarMensaje()" [disabled]="cargando || !mensajeUsuario.trim()">
+      Enviar
+    </button>
+  </div>
+</div>

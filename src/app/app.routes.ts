@@ -5,6 +5,8 @@ import { UsuariosListar } from './components/usuarios/usuarios-listar/usuarios-l
 import { DepartamentosListar } from './components/departamentos/departamentos-listar/departamentos-listar';
 import { ProviniciasListar } from './components/provincias/provinicias-listar/provinicias-listar';
 import { ProvinciasRegistrar } from './components/provincias/provincias-registrar/provincias-registrar';
+import { Chatbot } from './components/chatbot/chatbot';
+import { VR } from './components/vr/vr';
 
 export const routes: Routes = [
 
@@ -15,6 +17,9 @@ export const routes: Routes = [
 { path: 'departamentos/nuevo', component: DepartamentosRegistrar },
 
 { path: 'provincias', component: ProviniciasListar },
-{ path: 'provincias/nuevo', component: ProvinciasRegistrar }
+{ path: 'provincias/nuevo', component: ProvinciasRegistrar },
 
+{ path: 'chatbot', component: Chatbot },
+
+{ path: 'vr', component: VR }
 ];

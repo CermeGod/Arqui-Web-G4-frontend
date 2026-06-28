@@ -1,0 +1,7 @@
+.vr-container {
+  width: 100%;
+  /* Puedes ajustar la altura para que ocupe toda la pantalla (100vh) o solo un recuadro */
+  height: 80vh; 
+  background-color: #000;
+  position: relative;
+}

@@ -25,32 +25,41 @@ mat-toolbar.main-navbar {
   color: #0284c7 !important;
 }
 
-/* 2. Contenedor de botones (Aquí controlamos la separación) */
+/* 2. Contenedor de botones */
 .menu-links {
   display: flex !important;
   flex-direction: row !important;
-  gap: 20px !important; /* <--- Aumenté la separación entre botones como me pediste */
+  align-items: center !important;
+  gap: 20px !important;
 }
 
-/* 3. Estilo y color para tus botones (Usuario y Departamento) */
+/* 3. Todos los botones tendrán el mismo tamaño */
 .menu-links button.nav-btn {
   background-color: #0284c7 !important; /* Azul llamativo */
   color: #ffffff !important; /* Letras blancas */
-  border-radius: 8px !important; /* Bordes suaves */
-  padding: 6px 16px !important;
+  border-radius: 8px !important;
+
+  width: 150px;              /* Mismo ancho para todos */
+  height: 48px;              /* Misma altura para todos */
+  padding: 0 16px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-weight: 600 !important;
   transition: background-color 0.2s ease;
 }
 
-/* Cambio de color sutil cuando pasas el mouse por encima */
+/* Cambio de color al pasar el mouse */
 .menu-links button.nav-btn:hover {
   background-color: #0369a1 !important;
 }
 
-/* Iconos dentro de los botones del menú */
+/* Iconos dentro de los botones */
 .menu-links button.nav-btn mat-icon {
   color: #ffffff !important;
-  margin-right: 4px;
+  margin-right: 8px;
 }
 
 /* Espaciador para que la tabla no se pegue al menú */
