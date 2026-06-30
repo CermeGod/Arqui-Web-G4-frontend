@@ -1,4 +1,4 @@
 export class JwtRequestDTO {
-    username: string = "";
+    correo: string = ""; // Cambiado de username a correo
     password: string = "";
 }
