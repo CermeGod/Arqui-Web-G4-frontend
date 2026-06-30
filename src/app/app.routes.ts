@@ -8,18 +8,33 @@ import { ProvinciasRegistrar } from './components/provincias/provincias-registra
 import { Chatbot } from './components/chatbot/chatbot';
 import { VR } from './components/vr/vr';
 
+// Componentes de Distrito
+import { DistritosListar } from './components/distritos/distritos-listar/distritos-listar';
+import { DistritosRegistrar } from './components/distritos/distritos-registrar/distritos-registrar';
+
+// NUEVAS IMPORTACIONES: Componentes de Contacto
+import { ContactosListar } from './components/contactos/contactos-listar/contactos-listar';
+import { ContactosRegistrar } from './components/contactos/contactos-registrar/contactos-registrar';
+
 export const routes: Routes = [
 
-{ path: 'usuarios', component: UsuariosListar },
-{ path: 'usuarios/nuevo', component: UsuariosRegistrar },
+  { path: 'usuarios', component: UsuariosListar },
+  { path: 'usuarios/nuevo', component: UsuariosRegistrar },
 
-{ path: 'departamentos', component: DepartamentosListar },
-{ path: 'departamentos/nuevo', component: DepartamentosRegistrar },
+  { path: 'departamentos', component: DepartamentosListar },
+  { path: 'departamentos/nuevo', component: DepartamentosRegistrar },
 
-{ path: 'provincias', component: ProviniciasListar },
-{ path: 'provincias/nuevo', component: ProvinciasRegistrar },
+  { path: 'provincias', component: ProviniciasListar },
+  { path: 'provincias/nuevo', component: ProvinciasRegistrar },
 
-{ path: 'chatbot', component: Chatbot },
+  { path: 'distritos', component: DistritosListar },
+  { path: 'distritos/nuevo', component: DistritosRegistrar },
 
-{ path: 'vr', component: VR }
+  // NUEVAS RUTAS: Rutas para el módulo de Contactos
+  { path: 'contactos', component: ContactosListar },
+  { path: 'contactos/nuevo', component: ContactosRegistrar },
+
+  { path: 'chatbot', component: Chatbot },
+
+  { path: 'vr', component: VR }
 ];
