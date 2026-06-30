@@ -1,0 +1,97 @@
+/* Contenedor principal que centra y da aire al listado */
+.container {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Título de la sección estilizado */
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a1f36; /* Mismo tono oscuro corporativo del formulario */
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+}
+
+/* Contenedor con scroll para evitar que la tabla rompa el diseño en pantallas chicas */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 16px; /* Mismos bordes suaves de la tarjeta anterior */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important; /* Sombra sutil premium */
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    background: #ffffff;
+}
+
+/* Estilos aplicados directamente sobre la tabla de Angular Material */
+.mat-table {
+    width: 100%;
+    background: #ffffff;
+    border-collapse: collapse;
+}
+
+/* Cabecera de la tabla */
+.mat-header-cell {
+    color: #697386 !important; /* Gris intermedio sofisticado */
+    font-size: 14px;
+    font-weight: 600;
+    padding: 18px 16px !important;
+    border-bottom: 2px solid #edf0f2 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Celdas de datos */
+.mat-cell {
+    color: #3c4257; /* Texto legible pero suave */
+    font-size: 14px;
+    padding: 16px !important;
+    border-bottom: 1px solid #edf0f2 !important;
+    white-space: nowrap; /* Evita saltos de línea raros en ID, correo, etc. */
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* Permitir que la celda de mensaje sí pueda envolver texto si es largo */
+.mat-column-mensaje {
+    white-space: normal !important;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+/* Efecto hover elegante al pasar el cursor sobre las filas */
+.mat-row {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.mat-row:hover {
+    background-color: #f8fafc !important; /* Resaltado muy tenue al pasar el mouse */
+}
+
+/* Botón de eliminar estilizado (Icono) */
+button[matButton] {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #ff4d4f; /* Color rojo sutil para destrucción/eliminación */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+button[matButton]:hover {
+    background-color: #fff1f0; /* Fondo rosa suave al hacer hover */
+    transform: scale(1.05);
+}
+
+button[matButton] mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
