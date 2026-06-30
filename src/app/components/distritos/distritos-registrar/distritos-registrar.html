@@ -1,1 +1,49 @@
-<p>distritos-registrar works!</p>
+<div class="form-container">
+  <div class="form-card mat-elevation-z3">
+    
+    <div class="form-header">
+      <h2>{{ edicion ? 'Modificar Distrito' : 'Nuevo Distrito' }}</h2>
+      <p class="form-subtitle">Completa la información geográfica correspondiente</p>
+    </div>
+
+    <form [formGroup]="form" (submit)="aceptar()" class="responsive-form">
+
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Nombre del Distrito</mat-label>
+          <mat-icon matPrefix>location_on</mat-icon>
+          <input matInput formControlName="nombre" placeholder="Ej. Miraflores" required />
+          @if(form.get('nombre')?.hasError('required')) {
+            <mat-error>El nombre del distrito es obligatorio.</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Provincia de Pertenencia</mat-label>
+          <mat-icon matPrefix>map</mat-icon>
+          <mat-select formControlName="provinciaId" required placeholder="Seleccione una provincia">
+            @for (provincia of provincias; track provincia.provinciaId) {
+              <mat-option [value]="provincia.provinciaId">
+                {{ provincia.nombre }}
+              </mat-option>
+            }
+          </mat-select>
+          @if(form.get('provinciaId')?.hasError('required')) {
+            <mat-error>Debe vincular este distrito a una provincia.</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="form-actions">
+        <button mat-flat-button color="primary" class="btn-submit" type="submit">
+          <mat-icon>{{ edicion ? 'save' : 'add_circle' }}</mat-icon>
+          {{ edicion ? 'Guardar Cambios' : 'Registrar Distrito' }}
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</div>

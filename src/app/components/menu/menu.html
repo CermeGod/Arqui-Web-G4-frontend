@@ -17,14 +17,21 @@
       <mat-icon>map</mat-icon> Provincia
     </button>
 
-    <button mat-menu-item routerLink="/chatbot" class="nav-btn" >
+    <button mat-button [matMenuTriggerFor]="menuDistritos" class="nav-btn">
+      <mat-icon>location_on</mat-icon> Distrito
+    </button>
+
+    <button mat-button [matMenuTriggerFor]="menuContactos" class="nav-btn">
+      <mat-icon>contacts</mat-icon> Contacto
+    </button>
+
+    <button mat-button routerLink="/chatbot" class="nav-btn">
       <mat-icon>perm_identity</mat-icon> Chatbot
     </button>
 
-    <button mat-menu-item routerLink="/vr" class="nav-btn" >
+    <button mat-button routerLink="/vr" class="nav-btn">
       <mat-icon>perm_identity</mat-icon> VR
     </button>
-
   </div>
 </mat-toolbar>
 
@@ -46,13 +53,31 @@
   <button mat-menu-item routerLink="/departamentos/nuevo">
     <mat-icon>add</mat-icon> Registrar
   </button>
+</mat-menu>
 
-  <mat-menu #menuProvincias="matMenu">
+<mat-menu #menuProvincias="matMenu">
   <button mat-menu-item routerLink="/provincias">
     <mat-icon>list</mat-icon> Listar
   </button>
   <button mat-menu-item routerLink="/provincias/nuevo">
     <mat-icon>add</mat-icon> Registrar
   </button>
-  
+</mat-menu>
+
+<mat-menu #menuDistritos="matMenu">
+  <button mat-menu-item routerLink="/distritos">
+    <mat-icon>list</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/distritos/nuevo">
+    <mat-icon>add</mat-icon> Registrar
+  </button>
+</mat-menu>
+
+<mat-menu #menuContactos="matMenu">
+  <button mat-menu-item routerLink="/contactos">
+    <mat-icon>list</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/contactos/nuevo">
+    <mat-icon>add</mat-icon> Registrar
+  </button>
 </mat-menu>

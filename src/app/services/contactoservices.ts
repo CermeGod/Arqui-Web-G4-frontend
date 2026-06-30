@@ -8,7 +8,7 @@ const base_url=environments.base
 @Injectable({
   providedIn: 'root',
 })
-export class Coleccionservices {
+export class Contactosservices {
   private url = `${base_url}/Inmovision/contacto`;
 
   constructor(private http: HttpClient) {}
